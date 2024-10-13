@@ -21,10 +21,13 @@ export default function Page() {
     } = useForm<LoginParams>();
 
     const onSubmit = async ({ email, password }: LoginParams) => {
-        alert('not implemented');
+        alert('it is not implemented');
     };
 
-    const handleJKOLogin = async () => {};
+    const handleJKOLogin = async () => {
+        window.location.href =
+            process.env.NEXT_PUBLIC_JOKO_OATH_URL + 'oauth/login' + '?redirect_uri=' + process.env.NEXT_PUBLIC_BASE_URL;
+    };
 
     const errorMessage: any = null;
 
