@@ -6,7 +6,6 @@ import CarouselTemplate from '@components/ui/carousel/carousel-template';
 import CardLoader from '@components/ui/loaders/card-loader';
 import CardRoundedLoader from '@components/ui/loaders/card-rounded-loader';
 import { useCategoriesQuery } from '@framework/category/get-all-categories';
-import { TEMPLATE_ROUTES } from '@utils/routes';
 import { SwiperSlide } from 'swiper/react';
 
 interface CategoriesProps {
@@ -122,7 +121,7 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
                                   <Card
                                       imgSize={imgSize}
                                       item={category}
-                                      href={`${TEMPLATE_ROUTES.CATEGORY}/${category.slug}`}
+                                      href={''}
                                       variant={type}
                                       effectActive={true}
                                       size={type === 'rounded' ? 'medium' : 'small'}
