@@ -1,0 +1,106 @@
+// for swiper
+.swiper_container :global {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .arrow {
+        filter: drop-shadow(0px 3px 4px #4e39394f);
+    }
+
+    .st0 {
+        fill: black;
+        scale: 0.8;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        background-color: #dddd;
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        z-index: 10;
+        width: 45px;
+        height: 45px;
+        top: -55px;
+        transition: all 0.5s;
+        border-radius: 50%;
+        padding: 8px;
+
+        &.hide {
+            visibility: hidden;
+        }
+
+        &:hover {
+            background-color: #3a3a3a;
+            .st0 {
+                fill: white;
+            }
+        }
+        &::after,
+        &::before {
+            display: none;
+        }
+    }
+
+    .swiper-button-prev {
+        transform: rotate(-90deg);
+        right: 60px;
+
+        .st0 {
+            translate: 3px 3px;
+        }
+    }
+
+    .swiper-button-next {
+        transform: rotate(90deg);
+        right: 0px;
+
+        .st0 {
+            translate: 2px 3px;
+        }
+    }
+
+    .swiper-button-disabled {
+        pointer-events: none;
+        background: #f8f8f8 !important;
+        .st0 {
+            fill: #ccc !important;
+        }
+    }
+
+    .swiper-slide {
+        height: 220px;
+        width: auto; // set width required for slidesPerView='auto'
+
+        p {
+            margin-bottom: 0 !important;
+        }
+
+        div {
+            vertical-align: top;
+            padding: 0 5px;
+        }
+    }
+
+    // for mobile
+    @media (max-width: 540px) {
+        // give initial full-size layout margin space
+        // .swiper-slide:first-child {
+        //     margin-left: 20px;
+        // }
+
+        // so last slide can be shown at the start
+        .swiper-slide:last-child {
+            margin-right: calc(100vw - 200px);
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: none;
+        }
+    }
+}

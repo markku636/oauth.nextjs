@@ -1,0 +1,23 @@
+.input-container {
+    position: relative;
+
+    input {
+        font-size: 16px;
+    }
+
+    input:focus {
+        outline: 2px solid #1694f5;
+        border: none;
+    }
+
+    input:focus ~ span,
+    input:-webkit-autofill ~ span,
+    input:not(:placeholder-shown) ~ span {
+        font-size: 12px;
+        transform: translateY(-30px);
+    }
+
+    span {
+        transition: font-size 0.1s linear;
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "target": "es6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "alwaysStrict": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "paths": {
+            "@components/*": ["src/components/*"],
+            "@containers/*": ["src/containers/*"],
+            "@framework/*": ["src/framework/basic-rest/*"],
+            "@settings/*": ["src/settings/*"],
+            "@styles/*": ["src/styles/*"],
+            "@utils/*": ["src/utils/*"],
+            "@providers/*": ["src/providers/*"],
+            "@/*": ["src/*"],
+            "@public/*": ["public/*"]
+        },
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
+    },
+    "include": [
+        "src/typing/*.d.ts",
+        "src/typing/**/*.d.ts",
+        "src/typing/**/**/*.d.ts",
+        "next-env.d.ts",
+        "additional.d.ts",
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        ".next/types/**/*.ts",
+        "src/app/i18n/settings.ts",
+        "src/app/i18n/settings.ts",
+        "src/app/i18n/index.ts",
+        "**/*.d.ts"
+    ],
+    "exclude": ["node_modules"]
+}

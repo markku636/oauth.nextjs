@@ -1,0 +1,47 @@
+// for swiper
+.swiper_container :global {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .swiper-slide {
+        width: 800px;
+
+        p {
+            margin-bottom: 0 !important;
+        }
+
+        div {
+            vertical-align: top;
+            padding: 0 5px;
+        }
+    }
+}
+
+.swiper_gallery_popup_arrows_wrapper :global {
+    .swiper-button-prev {
+        left: 18px;
+    }
+    .swiper-button-next {
+        right: 20px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        font-weight: bold;
+        font-size: 50px;
+        color: #999999;
+
+        &:hover {
+            color: #3a3a3a;
+        }
+    }
+
+    .swiper-button-disabled {
+        pointer-events: none;
+        background: #f8f8f8 !important;
+        .st0 {
+            fill: #ccc !important;
+        }
+    }
+}

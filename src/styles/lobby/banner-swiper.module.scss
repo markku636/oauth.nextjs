@@ -1,0 +1,24 @@
+.banner_swiper_container :global {
+    .swiper-pagination-bullet {
+        line-height: 20px;
+        opacity: 1;
+        width: 22px;
+        height: 4px;
+        background-color: #dcdcdc;
+        border-radius: 10px;
+        display: inline-block;
+        transition: 0.2s all ease-in-out;
+
+        @media (min-width: 640px) {
+            width: 38px;
+            margin: 0 6px;
+        }
+    }
+    .swiper-pagination-bullet-active {
+        background: #fe1b1b;
+    }
+    .swiper-pagination {
+        padding: 0 30px;
+        margin-bottom: 12px;
+    }
+}

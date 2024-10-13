@@ -1,0 +1,14 @@
+.swiper {
+    :global(.swiper-pagination-bullet) {
+        border-radius: 0;
+        height: 60px;
+        width: 60px;
+        background-color: transparent;
+        border: 1px solid #cccccc;
+        opacity: 1;
+        margin: 0 8px !important;
+    }
+    :global(.swiper-pagination-bullet-active) {
+        border: 1px solid #ff3333;
+    }
+}
