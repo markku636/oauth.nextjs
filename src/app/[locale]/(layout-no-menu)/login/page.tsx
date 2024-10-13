@@ -20,9 +20,11 @@ export default function Page() {
         formState: { errors },
     } = useForm<LoginParams>();
 
-    const onSubmit = async ({ email, password }: LoginParams) => {};
+    const onSubmit = async ({ email, password }: LoginParams) => {
+        alert('not implemented');
+    };
 
-    const handleGuestLogin = async () => {};
+    const handleJKOLogin = async () => {};
 
     const errorMessage: any = null;
 
@@ -31,7 +33,7 @@ export default function Page() {
             <div className="flex flex-col items-center w-full sm:max-w-[360px] mt-6 lg:mt-24 px-8 sm:px-0 mx-auto max-w-[1580px]">
                 <h1 className="font-bold w-fit">{t('login-signin')}</h1>
 
-                <CustomButton fullWidth className="mt-6 lg:mt-10" disabled={isLoading} onClick={handleGuestLogin}>
+                <CustomButton fullWidth className="mt-6 lg:mt-10" disabled={isLoading} onClick={handleJKOLogin}>
                     {!isLoading ? t('login-jkopay-login') : t('button-loading')}
                 </CustomButton>
                 <DividerWithText text="OR" classNames="py-8" />
