@@ -1,11 +1,8 @@
 import { Action, ThunkAction, combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import cartReducer from './cart/cart-slice';
-
 import uiReducer from './ui/ui-slice';
 
 const rootReducer = combineReducers({
-    cart: cartReducer,
     ui: uiReducer,
 });
 

@@ -1,5 +1,24 @@
-export const authApiSlice = apiSlice.injectEndpoints({
-    endpoints: (builder) => ({}),
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+// Define your API slice
+export const authApi = createApi({
+    reducerPath: 'authApi',
+    baseQuery: fetchBaseQuery({
+        baseUrl: '',
+    }),
+    endpoints: (builder) => ({
+        validateToken: builder.mutation({
+            query: (code) => ({
+                url: '/api/oauth-proxy/validate',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: { code },
+            }),
+        }),
+    }),
 });
 
-export const {} = authApiSlice;
+// Export the auto-generated hook
+export const { useValidateTokenMutation } = authApi;

@@ -26,7 +26,7 @@ export default function Page() {
 
     const handleJKOLogin = async () => {
         window.location.href =
-            process.env.NEXT_PUBLIC_JOKO_OATH_URL + 'oauth/login' + '?redirect_uri=' + process.env.NEXT_PUBLIC_BASE_URL;
+            process.env.NEXT_PUBLIC_JOKO_OATH_URL + 'oauth/login?redirect_uri=' + process.env.NEXT_PUBLIC_BASE_URL;
     };
 
     const errorMessage: any = null;
