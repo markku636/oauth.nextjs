@@ -10,7 +10,7 @@ export const authApi = createApi({
     endpoints: (builder) => ({
         validateToken: builder.mutation({
             query: (code) => ({
-                url: '/api/oauth-proxy/validate',
+                url: '/api/oauth/validate',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
