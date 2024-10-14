@@ -1,6 +1,6 @@
 'use client';
-import { useAppDispatch, useAppSelector } from '@/redux/features/hooks';
-import { closeCart, selectUI } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch, useAppSelector } from '@/redux/reducer/hooks';
+import { closeCart, selectUI } from '@/redux/reducer/ui/ui-slice';
 
 import { Drawer } from '@components/common/drawer/drawer';
 import motionProps from '@components/common/drawer/motion';

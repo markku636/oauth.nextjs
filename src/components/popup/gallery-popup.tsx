@@ -1,5 +1,5 @@
 'use client';
-import { useSelectUI } from '@/redux/features/ui/ui-slice';
+import { useSelectUI } from '@/redux/reducer/ui/ui-slice';
 import styles from '@/styles/product/swiper-gallery-popup-pagination.module.scss';
 import Style from '@/styles/product/swiper-gallery-popup.module.scss';
 import cn from '@utils/classname/cn';

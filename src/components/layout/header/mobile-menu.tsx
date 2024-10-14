@@ -1,6 +1,6 @@
 'use client';
-import { useAppDispatch } from '@/redux/features/hooks';
-import { closeSidebar } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch } from '@/redux/reducer/hooks';
+import { closeSidebar } from '@/redux/reducer/ui/ui-slice';
 import Scrollbar from '@components/common/scrollbar';
 import Link from '@components/ui/link';
 import Logo from '@components/ui/logo';

@@ -1,4 +1,4 @@
-import { store } from '@/redux/features/store';
+import { store } from '@/redux/reducer/store';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { useLayoutEffect } from 'react';
 

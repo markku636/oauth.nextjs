@@ -13,7 +13,7 @@ export const config = {
 const proxy: any = createProxyMiddleware({
     target: process.env.NEXT_PUBLIC_JOKO_OATH_URL,
     changeOrigin: true, // change `request domain` to `target`
-    pathRewrite: { '^/api/proxy': '' }, // remove `/api/proxy` prefix
+    pathRewrite: { '^/api/oauth-proxy': '' }, // remove `/api/proxy` prefix
     onProxyReq: relayRequestHeaders,
     onError: (err: any, req: any) => {
         clientSideLog(

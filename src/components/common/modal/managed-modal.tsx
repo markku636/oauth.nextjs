@@ -1,6 +1,6 @@
 'use client';
-import { useAppDispatch, useAppSelector } from '@/redux/features/hooks';
-import { closeModal, selectUI } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch, useAppSelector } from '@/redux/reducer/hooks';
+import { closeModal, selectUI } from '@/redux/reducer/ui/ui-slice';
 import dynamic from 'next/dynamic';
 import Newsletter from '../newsletter';
 import Modal from './modal';

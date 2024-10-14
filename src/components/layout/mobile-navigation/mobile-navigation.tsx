@@ -1,6 +1,6 @@
 'use client';
-import { useAppDispatch, useAppSelector } from '@/redux/features/hooks';
-import { closeSidebar, openSidebar, selectUI } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch, useAppSelector } from '@/redux/reducer/hooks';
+import { closeSidebar, openSidebar, selectUI } from '@/redux/reducer/ui/ui-slice';
 import { IHeader } from '@/typing/layout';
 import motionProps from '@components/common/drawer/motion';
 import HomeIcon from '@components/icons/home-icon';

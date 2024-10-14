@@ -1,6 +1,6 @@
 'use client';
-import { useAppDispatch, useAppSelector } from '@/redux/features/hooks';
-import { closeSearch, selectUI } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch, useAppSelector } from '@/redux/reducer/hooks';
+import { closeSearch, selectUI } from '@/redux/reducer/ui/ui-slice';
 import Scrollbar from '@components/common/scrollbar';
 import SearchBox from '@components/common/search-box';
 import SearchProduct from '@components/common/search-product';

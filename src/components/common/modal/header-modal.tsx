@@ -1,5 +1,5 @@
-import { useAppDispatch } from '@/redux/features/hooks';
-import { setHeaderModalView, useSelectUI } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch } from '@/redux/reducer/hooks';
+import { setHeaderModalView, useSelectUI } from '@/redux/reducer/ui/ui-slice';
 import Overlay from './overlay';
 
 export default function HeaderModal() {

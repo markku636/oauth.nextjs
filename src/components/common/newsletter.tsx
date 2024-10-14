@@ -1,7 +1,7 @@
 'use client';
 import { useTranslationsCommon } from '@/hooks/translations/use-translation-hooks';
-import { useAppDispatch } from '@/redux/features/hooks';
-import { closeModal } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch } from '@/redux/reducer/hooks';
+import { closeModal } from '@/redux/reducer/ui/ui-slice';
 import Button from '@components/ui/button';
 import Input from '@components/ui/input';
 import Image from 'next/image';

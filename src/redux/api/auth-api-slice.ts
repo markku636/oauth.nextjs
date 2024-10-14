@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // Define your API slice
+
 export const authApi = createApi({
     reducerPath: 'authApi',
     baseQuery: fetchBaseQuery({

@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
 
-import { useAppDispatch } from '@/redux/features/hooks';
-import { openModal, setModalData, setModalView } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch } from '@/redux/reducer/hooks';
+import { openModal, setModalData, setModalView } from '@/redux/reducer/ui/ui-slice';
 import Text from '@components/ui/text';
 import usePrice from '@framework/product/use-price';
 import { Product } from '@framework/types';

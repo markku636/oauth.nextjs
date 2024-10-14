@@ -8,8 +8,8 @@ import { Product } from '@framework/types';
 // import ProductIcon1 from '../../../public/assets/images/products/icons/product-icon1.svg'
 // import ProductIcon2 from '../../../public/assets/images/products/icons/product-icon2.svg'
 // import ProductIcon3 from '../../../public/assets/images/products/icons/product-icon3.svg'
-import { useAppDispatch } from '@/redux/features/hooks';
-import { openModal, setModalData, setModalView } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch } from '@/redux/reducer/hooks';
+import { openModal, setModalData, setModalView } from '@/redux/reducer/ui/ui-slice';
 
 import ProductCompareIcon from '@components/icons/product-compare-icon';
 import ProductViewIcon from '@components/icons/product-view-icon';

@@ -1,4 +1,4 @@
-import { useSelectUI } from '@/redux/features/ui/ui-slice';
+import { useSelectUI } from '@/redux/reducer/ui/ui-slice';
 
 export default function PolicyAgreementPopup() {
     const {

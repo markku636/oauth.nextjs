@@ -1,5 +1,4 @@
 'use client';
-import useHideHeaderContent from '@/hooks/use-hide-header-content';
 import { ILanguageMenu } from '@/typing/layout';
 import CustomContainer from '@components/ui/custom-container';
 import NewLanguageSwitcher from '@components/ui/new-language-switcher';
@@ -10,12 +9,6 @@ interface ITopHeader {
 }
 
 export default function TopHeader({ languageMenu }: Readonly<ITopHeader>) {
-    const hideHeader = useHideHeaderContent();
-
-    if (hideHeader) {
-        return null;
-    }
-
     return (
         <div className="flex justify-end mx-auto md:py-2 bg-gray-150">
             <CustomContainer className="flex items-center justify-between w-full gap-1 md:justify-end">

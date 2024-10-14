@@ -1,7 +1,7 @@
 'use client';
 import useOnClickOutside from '@/hooks/use-click-outside';
-import { useAppDispatch } from '@/redux/features/hooks';
-import { closeModal } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch } from '@/redux/reducer/hooks';
+import { closeModal } from '@/redux/reducer/ui/ui-slice';
 import { Portal } from '@reach/portal';
 import { fadeInOut } from '@utils/motion/fade-in-out';
 import { zoomOutIn } from '@utils/motion/zoom-out-in';

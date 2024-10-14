@@ -1,7 +1,7 @@
 'use client';
 import { useTranslationsCommon } from '@/hooks/translations/use-translation-hooks';
-import { useAppDispatch, useAppSelector } from '@/redux/features/hooks';
-import { closeModal, openCart, selectUI } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch, useAppSelector } from '@/redux/reducer/hooks';
+import { closeModal, openCart, selectUI } from '@/redux/reducer/ui/ui-slice';
 import Counter from '@components/common/counter';
 import { ProductAttributes } from '@components/product/product-attributes';
 import Button from '@components/ui/button';

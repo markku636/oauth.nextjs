@@ -2,7 +2,7 @@
 import { LocalStorageKeys } from '@/const/keys';
 import { useGetUserQuery } from '@/redux/api/auth-api-slice';
 import { updateAddressFields } from '@/redux/features/cart/cart-slice';
-import { useAppDispatch } from '@/redux/features/hooks';
+import { useAppDispatch } from '@/redux/reducer/hooks';
 import { UserProfile } from '@/typing/api/auth-api-type';
 import { getMemberStatus } from '@utils/authority/authority';
 import { useEffect } from 'react';

@@ -2,8 +2,8 @@
 import { LocalStorageKeys } from '@/const/keys';
 
 import { DEFAULT_ADDRESS_FIELDS, updateAddressFields } from '@/redux/features/cart/cart-slice';
-import { useAppDispatch } from '@/redux/features/hooks';
-import { closeHeaderModal, useSelectUI } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch } from '@/redux/reducer/hooks';
+import { closeHeaderModal, useSelectUI } from '@/redux/reducer/ui/ui-slice';
 import { IAccountDropdown } from '@/typing/layout';
 import cn from '@utils/classname/cn';
 import { Routes } from '@utils/routes';

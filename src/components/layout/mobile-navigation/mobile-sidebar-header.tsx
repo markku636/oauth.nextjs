@@ -1,6 +1,6 @@
 'use client';
-import { useAppDispatch } from '@/redux/features/hooks';
-import { closeSidebar } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch } from '@/redux/reducer/hooks';
+import { closeSidebar } from '@/redux/reducer/ui/ui-slice';
 import Logo from '@components/ui/logo';
 import { IoClose } from 'react-icons/io5';
 

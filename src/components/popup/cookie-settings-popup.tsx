@@ -1,7 +1,7 @@
 'use client';
 import { CookieKeys } from '@/const/keys';
-import { useAppDispatch } from '@/redux/features/hooks';
-import { closeCookieBar, setPopupModalData, updateCookieBarSettings } from '@/redux/features/ui/ui-slice';
+import { useAppDispatch } from '@/redux/reducer/hooks';
+import { closeCookieBar, setPopupModalData, updateCookieBarSettings } from '@/redux/reducer/ui/ui-slice';
 import CustomButton from '@components/ui/button/custom-button';
 import { TableProps } from '@components/ui/table';
 import cn from '@utils/classname/cn';

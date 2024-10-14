@@ -6,6 +6,7 @@ import ReactQueryProviders from '@providers/react-query/react-query-provider';
 // external
 import 'react-toastify/dist/ReactToastify.css';
 // base css file
+import { Providers } from '@/redux/reducer/providers';
 import Presence from '@components/layout/header/animate-presence';
 import RevalidatePath from '@components/revalidate';
 import getQueryClient from '@providers/react-query/get-query-client';
@@ -18,7 +19,6 @@ import '@styles/tailwind.css';
 import { dehydrate } from '@tanstack/query-core';
 import localFont from 'next/font/local';
 import { ReactNode, Suspense } from 'react';
-import { Providers } from 'src/redux/features/providers';
 import { CartProvider } from './context/cart/cart.context';
 
 // Font files can be colocated inside of `app`
