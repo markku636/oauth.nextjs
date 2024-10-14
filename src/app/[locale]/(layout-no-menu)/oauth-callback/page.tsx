@@ -18,7 +18,7 @@ const OAuthCallback = () => {
             validateToken(code)
                 .unwrap()
                 .then((data) => {
-                    const token = data.data.accessToken;
+                    const token = data?.data?.accessToken;
 
                     if (token) {
                         setAccessToken(token);
