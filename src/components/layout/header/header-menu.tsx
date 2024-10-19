@@ -5,7 +5,6 @@ import MegaMenu from '@components/ui/mega-menu';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import { FaChevronDown } from 'react-icons/fa';
-
 interface MenuProps {
     data: any;
     className?: string;

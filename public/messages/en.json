@@ -93,7 +93,7 @@
         "error-message-field-required": "This field is required.",
         "error-message-please-try-again": "An error occurred, please try again later",
         "error-message-password-not-match": "Passwords do not match.",
-        "button-sign-out": "Sign out",
+        "sign-out": "Sign out",
         "account-menu-account-settings": "Account Settings",
         "account-menu-orders": "Orders",
         "form-input-company": "Company Name (Optional)",

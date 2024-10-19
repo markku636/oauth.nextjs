@@ -1,6 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+export type AuthState = {
+    isAuthenticated: boolean;
+    accessToken: string | null;
+    refreshToken: string | null;
+    userId: string | null;
+    expiresAt: string | null;
+    error: string | null;
+};
+
+const initialState: AuthState = {
     isAuthenticated: false,
     accessToken: null,
     refreshToken: null,

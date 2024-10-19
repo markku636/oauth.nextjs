@@ -1,4 +1,3 @@
-import { getToken } from '@framework/utils/get-token';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { useAppSelector } from '../hooks';
 import { AppState } from '../store';
@@ -23,10 +22,11 @@ export type POPUP_MODAL_DATA = {
     modalData?: any;
     title?: string;
     customClassNames?: string;
+    maxHeight: string;
+    maxWidth: string;
 };
 
 export interface UIState {
-    isAuthorized: boolean;
     displaySidebar: boolean;
     displayFilter: boolean;
     displayModal: boolean;
@@ -54,7 +54,6 @@ export interface UIState {
 }
 
 const initialState: UIState = {
-    isAuthorized: getToken() ? true : false,
     displaySidebar: false,
     displayFilter: false,
     displayModal: false,
@@ -91,12 +90,6 @@ const uiSlice = createSlice({
     name: 'ui',
     initialState,
     reducers: {
-        setAuthorized: (state) => {
-            state.isAuthorized = true;
-        },
-        setUnauthorized: (state) => {
-            state.isAuthorized = false;
-        },
         openSidebar: (state) => {
             state.displaySidebar = true;
         },

@@ -93,7 +93,7 @@
         "error-message-field-required": "Dieses Feld ist erforderlich.",
         "error-message-please-try-again": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut",
         "error-message-password-not-match": "Passwörter stimmen nicht überein.",
-        "button-sign-out": "Abmelden",
+        "sign-out": "Abmelden",
         "account-menu-account-settings": "Kontoeinstellungen",
         "account-menu-orders": "Bestellungen",
         "form-input-company": "Name der Firma (Optional)",

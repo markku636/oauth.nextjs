@@ -1,42 +1,58 @@
 'use client';
-import { useTranslationsCommon } from '@/hooks/translations/use-translation-hooks';
+import { ILanguageMenu } from '@/typing/layout';
 import { Listbox, Transition } from '@headlessui/react';
-import { siteSettings } from '@settings/site-settings';
+import { addActiveScroll } from '@utils/add-active-scroll';
+import { Routes } from '@utils/routes';
 import { getRedirectedPathName } from '@utils/utl-helper';
-import { useParams, usePathname, useRouter } from 'next/navigation';
-import { Fragment, useState } from 'react';
+import { useParams, usePathname } from 'next/navigation';
+import { Fragment, useRef, useState } from 'react';
 import { HiOutlineSelector } from 'react-icons/hi';
+import LanguageIcon from './language-icon';
 
-export default function LanguageSwitcher() {
+interface ILanguageProps {
+    languageMenu: ILanguageMenu[];
+}
+
+const DE_LANGUAGE_MENU = {
+    id: 'de',
+    nameLang: 'DE',
+    value: 'de',
+};
+
+export default function LanguageSwitcher({ languageMenu }: Readonly<ILanguageProps>) {
     const params = useParams();
-    const pathName = usePathname();
+    const pathname = usePathname();
+    const DEFAULT_LANGUAGE = languageMenu.find((item) => item.value === params?.locale) || DE_LANGUAGE_MENU;
+    const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
+    const siteHeaderRef = useRef(null);
 
-    const { site_header } = siteSettings;
-    const t = useTranslationsCommon();
-    const options = site_header.languageMenu;
-    const router = useRouter();
+    addActiveScroll(siteHeaderRef);
 
-    const currentSelectedItem = params?.lang ? options.find((o) => o.value === params.lang)! : options[2];
-    const [selectedItem, setSelectedItem] = useState(currentSelectedItem);
+    function changeMenuLanguage(values: any) {
+        setLanguage(values);
 
-    function handleItemClick(values: any) {
-        setSelectedItem(values);
-
-        const redirctUrl = getRedirectedPathName(pathName || '/', values.value);
+        const redirctUrl = getRedirectedPathName(pathname || '/', values.value);
 
         location.href = redirctUrl;
     }
 
+    if (pathname?.endsWith(Routes.Carts)) {
+        return null;
+    }
+
     return (
-        <Listbox value={selectedItem} onChange={handleItemClick}>
+        <Listbox value={language} onChange={changeMenuLanguage}>
             {({ open }) => (
-                <div className="relative z-10 w-[140px] ltr:ml-2 rtl:mr-2 sm:w-[150px] lg:w-[130px] ltr:lg:ml-0 rtl:lg:mr-0 xl:w-[150px]">
-                    <Listbox.Button className="relative w-full  cursor-pointer rounded-lg border border-gray-300  bg-white py-2 text-[13px] font-semibold text-heading shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 ltr:pl-3 ltr:pr-7 ltr:text-left rtl:pl-7 rtl:pr-3 rtl:text-right xl:text-sm">
-                        <span className="flex items-center truncate">
-                            <span className="ltr:mr-1.5 rtl:ml-1.5">{selectedItem.icon}</span> {t(selectedItem.name)}
+                <div className="relative z-10 ltr:ml-2 rtl:mr-2 ltr:lg:ml-0 rtl:lg:mr-0" ref={siteHeaderRef}>
+                    <Listbox.Button className="relative w-full cursor-pointer border border-gray-300  bg-white py-1.5 text-[10px] text-heading shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 ltr:pl-3 ltr:pr-7 ltr:text-left rtl:pl-7 rtl:pr-3 rtl:text-right sm:text-xs">
+                        <span className="flex items-center truncate text-[10px] sm:text-xs">
+                            <span className="ltr:mr-1.5 rtl:ml-1.5">
+                                <LanguageIcon language={language.value} />
+                            </span>
+                            {language.nameLang}
                         </span>
                         <span className="pointer-events-none absolute inset-y-0 flex items-center ltr:right-0 ltr:pr-1.5 rtl:left-0 rtl:pl-1.5">
-                            <HiOutlineSelector className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                            <HiOutlineSelector className="w-5 h-5 text-gray-400" aria-hidden="true" />
                         </span>
                     </Listbox.Button>
                     <Transition
@@ -48,37 +64,39 @@ export default function LanguageSwitcher() {
                     >
                         <Listbox.Options
                             static
-                            className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-sm shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            className="absolute w-full py-1 mt-1 overflow-auto text-sm bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none"
                         >
-                            {options?.map((option) => (
-                                <Listbox.Option
-                                    key={option.id}
-                                    className={({ active }) =>
-                                        `${active ? 'bg-gray-100 text-amber-900' : 'text-gray-900'}
+                            {languageMenu
+                                .filter((option) => option.nameLang !== language.nameLang)
+                                .map((option) => (
+                                    <Listbox.Option
+                                        key={option.id}
+                                        className={({ active }) =>
+                                            `${active ? 'bg-gray-100 text-amber-900' : 'text-gray-900'}
 												relative cursor-pointer select-none px-3 py-2`
-                                    }
-                                    value={option}
-                                >
-                                    {({ selected, active }) => (
-                                        <span className="flex items-center">
-                                            {option.icon}
-                                            <span
-                                                className={`${
-                                                    selected ? 'font-medium' : 'font-normal'
-                                                } block truncate ltr:ml-1.5 rtl:mr-1.5`}
-                                            >
-                                                {t(option.name)}
-                                            </span>
-                                            {selected ? (
+                                        }
+                                        value={option}
+                                    >
+                                        {({ selected, active }) => (
+                                            <span className="flex items-center">
+                                                <LanguageIcon language={option.value} />
                                                 <span
-                                                    className={`${active && 'text-amber-600'}
+                                                    className={`${
+                                                        selected ? 'font-medium' : 'font-normal'
+                                                    } block truncate ltr:ml-1.5 rtl:mr-1.5`}
+                                                >
+                                                    {option.nameLang}
+                                                </span>
+                                                {selected ? (
+                                                    <span
+                                                        className={`${active && 'text-amber-600'}
                                  absolute inset-y-0 flex items-center ltr:left-0 ltr:pl-3 rtl:right-0 rtl:pr-3`}
-                                                />
-                                            ) : null}
-                                        </span>
-                                    )}
-                                </Listbox.Option>
-                            ))}
+                                                    />
+                                                ) : null}
+                                            </span>
+                                        )}
+                                    </Listbox.Option>
+                                ))}
                         </Listbox.Options>
                     </Transition>
                 </div>

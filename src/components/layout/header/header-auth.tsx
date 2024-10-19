@@ -1,7 +1,7 @@
 import { IHeader } from '@/typing/layout';
 import CustomContainer from '@components/ui/custom-container';
+import LanguageSwitcher from '@components/ui/language-switcher';
 import Logo from '@components/ui/logo';
-import NewLanguageSwitcher from '@components/ui/new-language-switcher';
 import cn from '@utils/classname/cn';
 import HeaderWithSwither from './header-with-switcher';
 
@@ -18,7 +18,7 @@ export default function HeaderAuth({ header }: Readonly<IHeaderProps>) {
                 <div className="flex justify-between w-full md:w-fit">
                     <Logo />
                     <div className="md:hidden">
-                        <NewLanguageSwitcher languageMenu={languageMenu} />
+                        <LanguageSwitcher languageMenu={languageMenu} />
                     </div>
                 </div>
             </CustomContainer>

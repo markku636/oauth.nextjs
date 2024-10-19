@@ -1,10 +1,11 @@
 import { IHeader } from '@/typing/layout';
 import CustomContainer from '@components/ui/custom-container';
+import LanguageSwitcher from '@components/ui/language-switcher';
 import Logo from '@components/ui/logo';
-import NewLanguageSwitcher from '@components/ui/new-language-switcher';
 import cn from '@utils/classname/cn';
 import HeaderWithSwither from './header-with-switcher';
 
+import MenuButtons from './menu-buttons';
 import Menu from './new-header-menu';
 
 interface IHeaderProps {
@@ -22,10 +23,11 @@ export default function Header({ header }: Readonly<IHeaderProps>) {
                 <div className="flex justify-between w-full md:w-fit">
                     <Logo />
                     <div className="md:hidden">
-                        <NewLanguageSwitcher languageMenu={languageMenu} />
+                        <LanguageSwitcher languageMenu={languageMenu} />
                     </div>
                     <Menu menu={menu} />
                 </div>
+                <MenuButtons accountDropdown={accountDropdown} />
             </CustomContainer>
         </HeaderWithSwither>
     );
