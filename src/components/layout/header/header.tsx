@@ -5,9 +5,9 @@ import Logo from '@components/ui/logo';
 import cn from '@utils/classname/cn';
 import HeaderWithSwither from './header-with-switcher';
 
-import MenuButtons from './menu-buttons';
+import dynamic from 'next/dynamic';
 import Menu from './new-header-menu';
-
+const MenuButtons = dynamic(() => import('./menu-buttons'));
 interface IHeaderProps {
     header: IHeader;
 }

@@ -18,7 +18,6 @@ export default function MenuButtons({ accountDropdown }: Readonly<{ accountDropd
 
     const logout = () => {
         dispatch(logoutSuccess());
-        alert('logout');
     };
     const login = () => {
         router.push('/login');
@@ -27,17 +26,16 @@ export default function MenuButtons({ accountDropdown }: Readonly<{ accountDropd
     return (
         <div className="items-center justify-end flex-shrink-0 hidden gap-x-6 lg:flex lg:gap-x-10">
             {isAuthenticated ? (
-                <div className="flex group-hover:cursor-pointer item-center" onClick={logout}>
+                <div className="flex cursor-pointer item-center" onClick={logout}>
+                    <div className="mr-1"> {t('logout')}</div>
                     <TbLogin2 />
-                    {t('logout')}
                 </div>
             ) : (
-                <div className="flex items-center cursor group-hover:cursor-pointer" onClick={login}>
-                    <TbLogout2 className="mr-1" />
-                    <div>{t('login')}</div>
+                <div className="flex items-center cursor-pointer" onClick={login}>
+                    <div className="mr-1">{t('login')}</div>
+                    <TbLogout2 />
                 </div>
             )}
-            {isAuthenticated ? <div>123</div> : <div>456</div>}
         </div>
     );
 }
