@@ -1,13 +1,7 @@
 // pages/api/validate.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-type Data = {
-    message?: string;
-    error?: string;
-    response?: any;
-};
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         const { code } = req.body;
 
@@ -21,12 +15,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ code }),
+                body: JSON.stringify({ code, clientId: process.env.NEXT_PUBLIC_JOKO_OATH_CLIENT_ID }), // 加入 clientId 更安全 (可避免 token 被盜用)
             });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
 
             const data = await response.json();
 
