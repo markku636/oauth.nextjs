@@ -69,7 +69,7 @@
         "new-password": "Neues Passwort",
         "login-signin": "Anmelden",
         "login-guest-login": "Gast-Login",
-        "login-jkopay-login": "JKOPay Login",
+        "login-jkopay-login": "OauthLogin",
         "login-create-account": "Benutzerkonto erstellen",
         "login-forgot-password": "Passwort vergessen",
         "login-dont-have-account": "Sie haben noch kein Konto?",
