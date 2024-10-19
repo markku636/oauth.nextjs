@@ -34,10 +34,10 @@ export default function MenuButtons({ accountDropdown }: Readonly<{ accountDropd
             ) : (
                 <div className="flex items-center cursor group-hover:cursor-pointer" onClick={login}>
                     <TbLogout2 className="mr-1" />
-                    <div>{t('sign-out')}</div>
+                    <div>{t('login')}</div>
                 </div>
             )}
-            {accessToken}
+            {isAuthenticated ? <div>123</div> : <div>456</div>}
         </div>
     );
 }

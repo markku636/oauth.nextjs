@@ -27,7 +27,7 @@ export async function fetchLayout(): Promise<ILayout> {
             accountDropdown: {
                 id: 1,
                 orderStatusTextLang: 'account-dropdown-order-status-text',
-                signOutGuestTextLang: 'account-dropdown-sign-out-text',
+                signOutGuestTextLang: 'account-dropdown-logout-text',
             },
         },
         contacts: [
