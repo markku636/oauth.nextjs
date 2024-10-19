@@ -2,6 +2,9 @@
 import { useValidateTokenMutation } from '@/redux/api/auth-api-slice';
 import { loginSuccess } from '@/redux/reducer/auth/auth-slice';
 import { AppState } from '@/redux/reducer/store';
+import { Validation } from '@/typing/api/auth-api-type';
+import { ApiResponse } from '@/typing/common';
+import LoadingIndicator from '@components/ui/loaders/loading-indicator';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,25 +24,21 @@ const OAuthCallback = () => {
         if (code) {
             validateToken(code)
                 .unwrap()
-                .then((data) => {
+                .then((data: ApiResponse<Validation>) => {
                     const token = data?.data?.accessToken;
 
-                    if (token) {
+                    if (data && data.isSuccess && token) {
                         dispatch(loginSuccess(data.data));
+
                         window.location.replace(process.env.NEXT_PUBLIC_BASE_URL);
                     }
                 });
         }
     }, [searchParams, validateToken]);
 
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
-
     return (
         <div>
-            Access Token: {accessToken ? accessToken : 'No access token available'}-{' '}
-            {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}
+            <LoadingIndicator className="mt-3" />
         </div>
     );
 };
