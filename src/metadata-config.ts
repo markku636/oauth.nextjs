@@ -7,18 +7,14 @@ export const SITE_LOGO = process.env.NEXT_PUBLIC_CDN_ASSETS_URL + 'images/logo.p
 export function generateDefaultMetadata(locale: string, pathname: string): Metadata {
     const metaContent = {
         de: {
-            title: 'Kaufen Sie Gaming-PCs, Desktops und mehr günstig online bei Cool3C',
-            description:
-                'Cool3C ist Ihre Anlaufstelle für leistungsstarke Gaming-PCs, hochwertige Hardware und Gaming-Zubehör.',
-            keywords:
-                'high end pc, best pre built gaming pc, pre built desktop, pc zusammenstellen, gaming, pc, gaming pc, pc kaufen, konfigurieren',
+            title: '在 Cool3C 便宜購買遊戲電腦、桌上型電腦及更多',
+            description: 'Cool3C 是您購買強大遊戲電腦、高品質硬體及遊戲配件的首選商店。',
+            keywords: '高端電腦, 最佳預組遊戲電腦, 預組桌上型電腦, 組裝電腦, 遊戲, 電腦, 遊戲電腦, 購買電腦, 配置電腦',
         },
         en: {
-            title: 'Buy Gaming PCs, Desktops, and More Affordable Online at Cool3C',
-            description:
-                'Cool3C is your go-to shop for powerful gaming PCs, high-quality hardware, and gaming accessories.',
-            keywords:
-                'high end pc, best pre built gaming pc, pre built desktop, pc builder, custom pc, gaming, pc, gaming pc, buy pc',
+            title: '在 Cool3C 在線便宜購買3C',
+            description: 'Cool3C 是您購買強大3C、高品質硬體及遊戲配件的首選商店。',
+            keywords: '高端電腦, 最佳3C, 組裝電腦, 客製電腦, 遊戲, 電腦, 遊戲電腦, 購買電腦',
         },
     };
 

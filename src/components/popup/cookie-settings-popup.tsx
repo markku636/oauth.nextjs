@@ -1,7 +1,7 @@
 'use client';
 import { CookieKeys } from '@/const/keys';
 import { useAppDispatch } from '@/redux/reducer/hooks';
-import { closeCookieBar, setPopupModalData, updateCookieBarSettings } from '@/redux/reducer/ui/ui-slice';
+import { setPopupModalData, updateCookieBarSettings } from '@/redux/reducer/ui/ui-slice';
 import CustomButton from '@components/ui/button/custom-button';
 import { TableProps } from '@components/ui/table';
 import cn from '@utils/classname/cn';
@@ -158,13 +158,12 @@ export default function CookieSettingsPopup() {
     };
 
     const handleClosePopup = () => {
-        dispatch(closeCookieBar());
         dispatch(setPopupModalData({ modalView: '', modalData: null }));
     };
 
     return (
         <div className="overflow-y-scroll max-w-[640px] h-[80vh] flex flex-col items-center gap-4 md:px-6">
-            <h4 className="font-bold text-lg xl:text-2xl">{t('popup-accept-cookies-title')}</h4>
+            <h4 className="text-lg font-bold xl:text-2xl">{t('popup-accept-cookies-title')}</h4>
             <p className="text-xs">
                 {t.rich('popup-accept-cookies-description', {
                     a: (chunks) => (
@@ -185,21 +184,21 @@ export default function CookieSettingsPopup() {
                             'flex flex-col pb-4 gap-4 border-b-2 border-solid border-black last:border-b last:border-gray-light'
                         )}
                     >
-                        <div className="flex gap-4 justify-between items-center">
-                            <h5 className="font-bold text-base md:text-lg">{title}</h5>
+                        <div className="flex items-center justify-between gap-4">
+                            <h5 className="text-base font-bold md:text-lg">{title}</h5>
                             {type === 'text' ? (
                                 <div className="text-sm">{text}</div>
                             ) : (
-                                <div className="flex flex-shrink-0 items-center">
-                                    <label className="switch relative inline-block w-10 cursor-pointer">
+                                <div className="flex items-center flex-shrink-0">
+                                    <label className="relative inline-block w-10 cursor-pointer switch">
                                         <input
                                             id="remember"
                                             type="checkbox"
-                                            className="h-0 w-0 opacity-0"
+                                            className="w-0 h-0 opacity-0"
                                             onChange={() => handleOnChange(id)}
                                             checked={checked}
                                         />
-                                        <span className="slider round absolute inset-0 bg-gray-300 transition-all duration-300 ease-in"></span>
+                                        <span className="absolute inset-0 transition-all duration-300 ease-in bg-gray-300 slider round"></span>
                                     </label>
                                 </div>
                             )}
